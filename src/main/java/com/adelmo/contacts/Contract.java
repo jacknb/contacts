@@ -8,7 +8,7 @@ public class Contract {
     private Long id;
     private String firstName;
     private String lastName;
-    private String phoneName;
+    private String phoneNumber;
     private String emailAddress;
 
     public Long getId() {
@@ -35,12 +35,12 @@ public class Contract {
         this.lastName = lastName;
     }
 
-    public String getPhoneName() {
-        return phoneName;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhoneName(String phoneName) {
-        this.phoneName = phoneName;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmailAddress() {

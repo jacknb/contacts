@@ -32,7 +32,7 @@ public class ContractRepository {
                 contract.setId(resultSet.getLong(1));
                 contract.setFirstName(resultSet.getString(2));
                 contract.setLastName(resultSet.getString(3));
-                contract.setPhoneName(resultSet.getString(4));
+                contract.setPhoneNumber(resultSet.getString(4));
                 contract.setEmailAddress(resultSet.getString(5));
                 return contract;
             }
