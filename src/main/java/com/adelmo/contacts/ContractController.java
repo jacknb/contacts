@@ -27,7 +27,13 @@ public class ContractController {
     public String home(Map<String, Object> model) {
 
         List<Contract> contracts = contractRepository.findAll();
-        model.put("contract", contracts);
+        model.put("contracts", contracts);
         return "home";
+    }
+
+    @RequestMapping(method = RequestMethod.POST)
+    public String submit(Contract contract){
+        contractRepository.save(contract);
+        return "redirect:/";
     }
 }

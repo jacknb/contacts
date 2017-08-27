@@ -24,7 +24,7 @@ public class ContractRepository {
     }
 
     public List<Contract> findAll() {
-        String sql = "select id,firstName,lastName,phoneName,emailAddress from contacts order by lastName";
+        String sql = "select id,firstName,lastName,phoneNumber,emailAddress from contacts order by lastName";
         return jdbcTemplate.query(sql, new RowMapper<Contract>() {
             @Override
             public Contract mapRow(ResultSet resultSet, int i) throws SQLException {
@@ -37,5 +37,11 @@ public class ContractRepository {
                 return contract;
             }
         });
+    }
+
+    public void save(Contract contract) {
+        jdbcTemplate.update("INSERT INTO contacts(firstName,lastName,phoneNumber,emailAddress) " +
+                "VALUES (?,?,?,?)", contract.getFirstName(), contract.getLastName(),
+                contract.getPhoneNumber(), contract.getEmailAddress());
     }
 }
